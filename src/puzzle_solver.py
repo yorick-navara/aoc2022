@@ -1,5 +1,10 @@
 from puzzles import *
-from puzzles import puzzle01, puzzle02, puzzle04
+from puzzles import \
+  puzzle01, \
+  puzzle02, \
+  puzzle03, \
+  puzzle04, \
+  puzzle05
 
 
 PUZZLE_SOLVERS = {
@@ -11,9 +16,17 @@ PUZZLE_SOLVERS = {
     1: puzzle02.part1,
     2: puzzle02.part2
   },
+  3: {
+    1: puzzle03.part1,
+    2: puzzle03.part2
+  },
   4: {
     1: puzzle04.part1,
     2: puzzle04.part2
+  },
+  5: {
+    1: puzzle05.part1,
+    2: puzzle05.part2
   }
 }
 
