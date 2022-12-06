@@ -6,12 +6,12 @@ def test_part1_example():
 
 
 def test_part1():
-  assert part1() == 1655
+  assert part1() == [1655]
 
 
 def test_part2_example():
-  assert part2(use_example=True) == 0
+  assert part2(use_example=True) == [19, 23, 23, 29, 26]
 
 
 def test_part2():
-  assert part2() == 2665
+  assert part2() == [2665]

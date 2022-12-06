@@ -8,7 +8,7 @@ def get_data_stacks(use_example:bool): #-> int, List:
     start = 4
     cratestacks = ['ZN', 'MCD', 'P']
   else:
-    start = 8
+    start = 9
     cratestacks = [
       'GDVZJSB',
       'ZSMGVP',

@@ -14,4 +14,4 @@ def test_part2_example():
 
 
 def test_part2():
-  assert part2() == ''
+  assert part2() == 'BLSGJSDTS'
