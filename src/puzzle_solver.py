@@ -5,7 +5,8 @@ from puzzles import \
   puzzle03, \
   puzzle04, \
   puzzle05, \
-  puzzle06
+  puzzle06, \
+  puzzle08
 
 
 PUZZLE_SOLVERS = {
@@ -32,6 +33,10 @@ PUZZLE_SOLVERS = {
   6: {
     1: puzzle06.part1,
     2: puzzle06.part2
+  },
+  8: {
+    1: puzzle08.part1,
+    2: puzzle08.part2
   }
 }
 
