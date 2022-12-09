@@ -18,19 +18,25 @@ def read_input_list(
 
 def get_puzzle_filename(
   puzzle_number: int,
-  use_example = False
+  use_example = False,
+  variant = 1
 ) -> str:
-  if use_example:
-    return f"data/{str(puzzle_number).zfill(2)}_input_example.csv"
+  if variant != 1:
+    filename_variant = f'_{str(variant)}'
   else:
-    return f"data/{str(puzzle_number).zfill(2)}_input.csv"
+    filename_variant = ''
+  if use_example:
+    return f"data/{str(puzzle_number).zfill(2)}_input{filename_variant}_example.csv"
+  else:
+    return f"data/{str(puzzle_number).zfill(2)}_input{filename_variant}.csv"
 
 
 def read_input_list_from_nr(
   puzzle_number: int,
-  use_example = False
+  use_example = False,
+  variant = 1
 ) -> List[any]:
-  filename = get_puzzle_filename(puzzle_number, use_example=use_example)
+  filename = get_puzzle_filename(puzzle_number, use_example=use_example, variant = variant)
   return read_input_list(filename)
 
 
