@@ -35,10 +35,8 @@ def test_determine_file_structure_example():
 
 def test_part1():
   result = part1()
-  assert result > 1157685 # 1157685 was too low
+  assert result == 1325919
   assert result == 0
-
-
 
 
 # def test_part2_example():

@@ -80,17 +80,17 @@ def get_folder_size_2(dir_structure: Dict[str, any], rel_path:str = '') -> Dict[
 
 
 def get_folder_size(dir_structure: Dict[str, any]) -> Dict[str, int]:
-  print("get_folder_size")
+  #print("get_folder_size")
   folder_sizes = {}
   for key in dir_structure:
     folders_applies = []
-    print(key, dir_structure[key])
+    #print(key, dir_structure[key])
     if isinstance(dir_structure[key], dict):
       folders_applies.append(key)
       folder_sizes = get_folder_size(dir_structure=dir_structure[key])
-      print(folder_sizes)
+      #print(folder_sizes)
       size = sum([folder_sizes[x] for x in folder_sizes])
-      print(size)
+      #print(size)
 
       for folder in folders_applies:
         if folder not in folder_sizes.keys():
@@ -117,7 +117,7 @@ def determine_file_structure(input:List[str]) -> Dict[str, Any]:
       dir_structure, cwd = process_command(line[2:], dir_structure, cwd)
     else:
       process_file_contents(line, dir_structure, cwd)
-    print(dir_structure, cwd)
+    #print(dir_structure, cwd)
   return dir_structure
 
 
@@ -126,8 +126,8 @@ def part1(use_example:bool=False):
 
   dir_structure = determine_file_structure(input)
   
-  print("dir_structure")
-  print(dir_structure)
+  #print("dir_structure")
+  #print(dir_structure)
 
   dir_sizes = get_folder_size_2(dir_structure)
   # print("dir_sizes")
@@ -140,7 +140,7 @@ def part1(use_example:bool=False):
   # print(complete_dir_sizes)
   max_size = 100000
   directories_small_enough = [complete_dir_sizes[dir] for dir in complete_dir_sizes if complete_dir_sizes[dir] <= max_size]
-  print(directories_small_enough)
+  #print(directories_small_enough)
   total_size = sum(directories_small_enough)
   return total_size
 
