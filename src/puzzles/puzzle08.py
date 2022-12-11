@@ -1,9 +1,9 @@
 from typing import List
-from generic.read_inputs import read_input_list_from_nr
+from generic.read_inputs import read_csv_list_from_nr
 
 
 def part1(use_example:bool=False) -> int:
-  input = read_input_list_from_nr(8, use_example=use_example)
+  input = read_csv_list_from_nr(8, use_example=use_example)
   
   num_trees_visible = 0
   
@@ -41,7 +41,7 @@ def get_scenic_score(view:List[int], selected_tree: int) -> int:
 
 
 def part2(use_example:bool=False) -> int:
-  input = read_input_list_from_nr(8, use_example=use_example)
+  input = read_csv_list_from_nr(8, use_example=use_example)
   
   max_scenic_score = 0
   

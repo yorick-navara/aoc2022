@@ -1,5 +1,5 @@
 from puzzles.puzzle07 import part1, part2, determine_file_structure
-from generic.read_inputs import read_input_list_from_nr
+from generic.read_inputs import read_csv_list_from_nr
 
 
 def test_part1_example():
@@ -7,7 +7,7 @@ def test_part1_example():
 
 
 def test_determine_file_structure_example():
-  input = read_input_list_from_nr(7, use_example=True)
+  input = read_csv_list_from_nr(7, use_example=True)
   expected_dir_structure = {
     '/': {
       'a': {

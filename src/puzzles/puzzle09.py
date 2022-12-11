@@ -1,6 +1,6 @@
 from argparse import ArgumentError
 from typing import List, Tuple
-from generic.read_inputs import read_input_list_from_nr
+from generic.read_inputs import read_csv_list_from_nr
 
 def sign(x:int) -> int:
   if x >= 0:
@@ -92,13 +92,13 @@ def get_pos_tail_visited_long_rope(input: List[str], rope_length) -> int:
 
 
 def part1(use_example:bool=False) -> int:
-  input = read_input_list_from_nr(9, use_example=use_example)
+  input = read_csv_list_from_nr(9, use_example=use_example)
   steps = get_pos_tail_visited_long_rope(input,rope_length=2)
   return steps
 
 
 def part1_generalized(use_example:bool=False) -> int:
-  input = read_input_list_from_nr(9, use_example=use_example)
+  input = read_csv_list_from_nr(9, use_example=use_example)
   steps = get_pos_tail_visited_long_rope(input,rope_length=2)
   return steps
 
@@ -108,6 +108,6 @@ def part2(use_example:bool=False) -> int:
     variant = 2
   else:
     variant = 1
-  input = read_input_list_from_nr(9, use_example=use_example, variant=variant)
+  input = read_csv_list_from_nr(9, use_example=use_example, variant=variant)
   steps = get_pos_tail_visited_long_rope(input,rope_length=10)
   return steps

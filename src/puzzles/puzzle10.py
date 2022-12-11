@@ -1,5 +1,5 @@
 from typing import List
-from generic.read_inputs import read_input_list_from_nr
+from generic.read_inputs import read_csv_list_from_nr
 
 
 def get_signal_strengths(
@@ -47,13 +47,13 @@ def draw_crt(input: List[str], width=40, height=6):
 
 
 def part1(use_example:bool=False) -> int:
-  input = read_input_list_from_nr(10, use_example=use_example)
+  input = read_csv_list_from_nr(10, use_example=use_example)
   signal_indices = [20, 60, 100, 140, 180, 220]
   signal_strengths = get_signal_strengths(input, signal_indices, start_value=1)
   return sum(signal_strengths)
 
 
 def part2(use_example:bool=False) -> int:
-  input = read_input_list_from_nr(10, use_example=use_example)
+  input = read_csv_list_from_nr(10, use_example=use_example)
   result = draw_crt(input)
   return result

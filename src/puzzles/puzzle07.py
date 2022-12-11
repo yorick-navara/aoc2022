@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Tuple
 
-from generic.read_inputs import read_input_list_from_nr, read_input_df_from_nr
+from generic.read_inputs import read_csv_list_from_nr, read_input_df_from_nr
 
 # class FileSystem():
 #   dir_structure:Dict[str,Any] = {}
@@ -122,7 +122,7 @@ def determine_file_structure(input:List[str]) -> Dict[str, Any]:
 
 
 def part1(use_example:bool=False):
-  input = read_input_list_from_nr(7, use_example=use_example)
+  input = read_csv_list_from_nr(7, use_example=use_example)
 
   dir_structure = determine_file_structure(input)
   
@@ -146,5 +146,5 @@ def part1(use_example:bool=False):
 
 
 def part2(use_example:bool=False):
-  input = read_input_list_from_nr(7, use_example=use_example)
+  input = read_csv_list_from_nr(7, use_example=use_example)
   return 42
