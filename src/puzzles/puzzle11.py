@@ -1,6 +1,7 @@
 from typing import List, Callable
 
 import numpy
+import math
 
 from generic.read_inputs import read_txt_list_from_nr
 
@@ -31,9 +32,6 @@ class Monkey:
     throw_false: {self.throw_false}
     items_inspected: {self.items_inspected}
     """
-
-# def multiply_partial(y):
-#   return partial(int, base=2)
 
 
 def add_nrs(x,y):
@@ -96,22 +94,17 @@ def play_round(monkeys: List[Monkey], super_worried: bool) -> List[Monkey]:
   
   if super_worried:
     divisor = get_divisor(monkeys)
-    #print(divisor)
   
   for index, monkey in enumerate(monkeys):
     for item in monkey.items:
-      #item = monkey.items.pop(0)
 
       item = monkey.operation(item, monkey.operand)
 
       if not super_worried:
         item = int(item/3)
-      else:#if monkey.operation is not add_nrs:
-        # if item > divisor:
-        #   print(f"Item {item} for monkey {index} larger than divisor {divisor}: reduce to: {item % divisor}")
+      else:
         item = item % divisor
         
-
       throw_to = monkey.test(item)
 
       monkeys[throw_to].items.append(item)
@@ -123,19 +116,10 @@ def play_round(monkeys: List[Monkey], super_worried: bool) -> List[Monkey]:
 
 
 def get_divisor(monkeys: List[Monkey]) -> int:
-  operands = [monkey.operand for monkey in monkeys if monkey.operation == multiply]
   divisors = [monkey.test_divisor for monkey in monkeys]
-  common_divisor = numpy.prod(operands)*numpy.prod(divisors)
+  
+  common_divisor = int(numpy.prod(divisors))
   return common_divisor
-
-
-# def reduce_worry(monkeys: List[Monkey]) -> List[Monkey]:
-#   common_divisor = get_divisor(monkeys)
-
-#   for monkey in monkeys:
-#     for index, item in enumerate(monkey.items):
-#       monkey.items[index] = monkey.items[index] % common_divisor
-#   return monkeys, common_divisor
 
 
 def play_monkey_business(
@@ -144,13 +128,7 @@ def play_monkey_business(
   super_worried:bool = False
 ) -> int:
   for round in range(rounds):
-    # if round in range(20):# or round % 1000 == 0:
-    #   print(f"Round {round}")
-    #   for monkey in monkeys:
-    #     print(monkey)
     monkeys = play_round(monkeys,super_worried=super_worried)
-  
-  print([monkey.items_inspected for monkey in monkeys])
 
   ordered_monkey_business = sorted(
     [monkey.items_inspected for monkey in monkeys],
@@ -181,5 +159,3 @@ def part2(use_example:bool=False) -> int:
     super_worried=True)
 
   return lvl_monkey_business
-
-  return 0

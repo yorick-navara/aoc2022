@@ -14,4 +14,5 @@ def test_part2_example():
   assert part2(use_example=True) == 2713310158
 
 def test_part2():
-  assert part2() < 14808513720
+  assert part2() == 13937702909
+  
